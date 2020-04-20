@@ -1,8 +1,6 @@
 from django.http import HttpResponse
+from django.shortcuts import render
 
 
 def home(request):
-    title = '<h1>Home</h1>'
-    subtitle = '<h2>Welcome to training-django</h2>'
-
-    return HttpResponse(title + subtitle)
+    return render(request, 'index.html')
