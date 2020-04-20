@@ -18,6 +18,7 @@ from django.urls import path
 from django.http import HttpResponse
 
 from . import views
+from .apps.blog import views as views_blog
 
 
 def index(request):
@@ -30,6 +31,7 @@ def about(request):
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('blog/', views_blog.index),
     path('about/', about),
     path('', views.home)
 ]
