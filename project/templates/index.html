@@ -4,16 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <title>learn-django</title>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}"/>
 </head>
 <body>
     <img style="width: 100%" src="{% static banner %}" alt="banner"/>
+    <nav>
+        <ul>
+            {% for link, str in nav %}
+                <li><a href="{{ link }}">{{ str }}</a></li>
+            {% endfor %}
+        </ul>
+    </nav>
 
     <h1>{{ title }}</h1>
-    <ul>
-        {% for link, str in nav %}
-            <li><a href="{{ link }}">{{ str }}</a></li>
-        {% endfor %}
-    </ul>
 
 </body>
 </html>
