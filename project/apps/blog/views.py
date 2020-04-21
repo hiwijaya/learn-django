@@ -3,7 +3,11 @@ from django.http import HttpResponse
 
 
 def index(request):
-    return render(request, 'blog.html')
+    context = {
+        'title': 'Learn Django',
+        'contributor': 'Happy Indra Wijaya'
+    }
+    return render(request, 'blog.html', context)
 
 
 def post(request):
