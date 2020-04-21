@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,14 +6,13 @@
     <title>learn-django</title>
 </head>
 <body>
+    <img style="width: 100%" src="{% static banner %}" alt="banner"/>
 
-    <h1>Home</h1>
-    <h2>Welcome to learn-django!</h2>
-
+    <h1>{{ title }}</h1>
     <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/blog">Blog</a></li>
-        <li><a href="/about">About</a></li>
+        {% for link, str in nav %}
+            <li><a href="{{ link }}">{{ str }}</a></li>
+        {% endfor %}
     </ul>
 
 </body>
